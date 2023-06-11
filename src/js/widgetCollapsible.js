@@ -1,10 +1,10 @@
 export default class WidgetCollapsible {
   constructor() {
-    this.container = document.querySelector('.content'); /// /main_container
+    this.container = document.querySelector(".content"); /// /main_container
   }
 
   init() {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener("DOMContentLoaded", () => {
       this.initWidget();
     });
   }
@@ -18,24 +18,25 @@ export default class WidgetCollapsible {
       </div>
       <div data-id="widgetFooter" class="widget_footer collapsed">         
         <div class="widget_footer_string">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.        
+        Collapse
+Legend
+As part of the implementation of a large portal, you need to make a widget "collapsible"-containers that can expand and collapse.        
         </div>
       </div> 
     </div>
     `;
 
-    this.container.insertAdjacentHTML('beforeEnd', widgetCollapsibleHtml);
+    this.container.insertAdjacentHTML("beforeEnd", widgetCollapsibleHtml);
 
     this.container
-      .querySelector('[data-widget=widgetCollapsible]')
-      .addEventListener('click', (evt) => {
-        if (evt.target.dataset.id !== 'widgetButton') return;
+      .querySelector("[data-widget=widgetCollapsible]")
+      .addEventListener("click", (evt) => {
+        if (evt.target.dataset.id !== "widgetButton") return;
         const widgetFooter = evt.currentTarget.querySelector(
-          '[data-id=widgetFooter]',
+          "[data-id=widgetFooter]"
         );
-        widgetFooter.classList.toggle('collapsed');
-        widgetFooter.classList.toggle('show');
+        widgetFooter.classList.toggle("collapsed");
+        widgetFooter.classList.toggle("show");
       });
   }
 }
